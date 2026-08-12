@@ -1,0 +1,92 @@
+{
+    "version": "2026.08.02.0800-c7e8800",
+    "description": "Stable Audio 3 on CPU via LiteRT/TFLite - text-to-audio, audio-to-audio, and inpainting with no PyTorch at runtime",
+    "homepage": "https://github.com/Stability-AI/stable-audio-3/tree/main/optimized/tflite",
+    "license": {
+        "identifier": "MIT",
+        "url": "https://github.com/Stability-AI/stable-audio-3/blob/main/LICENSE"
+    },
+    "notes": [
+        "Model weights are NOT bundled. They lazy-download from HuggingFace",
+        "(stabilityai/stable-audio-3-optimized) on first use: ~2.3 GB for the small",
+        "DiTs, ~9.5 GB for medium. Anonymous downloads are rate-limited - run",
+        "'huggingface-cli login' with a free read token to lift the cap.",
+        "",
+        "  sa3 --prompt \"lofi house loop\" --dit sm-music --decoder same-s --play",
+        "  sa3 --help          # all flags + categorised examples",
+        "  sa3-gradio          # browser UI (installs gradio extras on first run)",
+        "",
+        "Weights are governed by the Stability AI Community License:",
+        "https://stability.ai/license",
+        "",
+        "Persisted across upgrades: .venv, models/tflite, output, loras.",
+        "",
+        "If HuggingFace downloads fail with path-length errors, enable Windows long",
+        "paths once from an admin PowerShell, then restart your terminal:",
+        "  Set-ItemProperty 'HKLM:\\SYSTEM\\CurrentControlSet\\Control\\FileSystem' -Name LongPathsEnabled -Value 1",
+        "",
+        "ffmpeg is optional - only needed for mp3 / 24-bit / non-44.1kHz --init-audio",
+        "inputs: scoop install main/ffmpeg"
+    ],
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/Stability-AI/stable-audio-3/archive/c7e88002a3d15bbd4b56f792c5be6f06692d80fb.zip",
+            "hash": "53a5a1602a4eb3ae8b588b62ce87c75a18243f42252d3b25c1324ef87bf5b655",
+            "extract_dir": "stable-audio-3-c7e88002a3d15bbd4b56f792c5be6f06692d80fb/optimized/tflite"
+        }
+    },
+    "depends": "main/uv",
+    "suggest": {
+        "ffmpeg": "main/ffmpeg"
+    },
+    "persist": [
+        ".venv",
+        "models/tflite",
+        "output",
+        "loras"
+    ],
+    "pre_install": [
+        "# Upstream ships no Windows twin of the ./sa3-gradio shell wrapper; make one.",
+        "# Must run before create_shims, which is why this is pre_install, not post_install.",
+        "Set-Content -Encoding ascii -Path \"$dir\\sa3-gradio.bat\" -Value @('@echo off', 'setlocal', 'set \"PY=%~dp0.venv\\Scripts\\python.exe\"', 'if not exist \"%PY%\" set \"PY=python\"', '\"%PY%\" \"%~dp0scripts\\sa3_gradio.py\" %*', 'exit /b %ERRORLEVEL%')"
+    ],
+    "post_install": [
+        "# Runs AFTER persist_data, so $dir\\.venv is already a junction into the",
+        "# persist dir on upgrades - an existing venv is reused, not rebuilt.",
+        "$py = \"$dir\\.venv\\Scripts\\python.exe\"",
+        "if (-not (Test-Path $py)) {",
+        "    Write-Host 'Creating Python 3.11 venv via uv (ai-edge-litert has no 3.14 wheels)...' -ForegroundColor Yellow",
+        "    uv venv --python 3.11 \"$dir\\.venv\"",
+        "}",
+        "if (-not (Test-Path $py)) {",
+        "    error 'Failed to create the .venv - is uv working? Try: uv python install 3.11'",
+        "    return",
+        "}",
+        "Write-Host 'Installing runtime deps into the venv...' -ForegroundColor Yellow",
+        "uv pip install --python \"$py\" -r \"$dir\\requirements.txt\"",
+        "if ($LASTEXITCODE -ne 0) { error 'uv pip install failed'; return }"
+    ],
+    "bin": [
+        [
+            "sa3.bat",
+            "sa3"
+        ],
+        [
+            "sa3-gradio.bat",
+            "sa3-gradio"
+        ]
+    ],
+    "checkver": {
+        "url": "https://api.github.com/repos/Stability-AI/stable-audio-3/commits?path=optimized/tflite&per_page=1",
+        "regex": "\"sha\":\\s*\"(?<sha>(?<short>[0-9a-f]{7})[0-9a-f]{33})\"[\\s\\S]*?\"committer\":[\\s\\S]*?\"date\":\\s*\"(?<year>\\d{4})-(?<month>\\d{2})-(?<day>\\d{2})T(?<hour>\\d{2}):(?<minute>\\d{2})",
+        "replace": "${year}.${month}.${day}.${hour}${minute}-${short}"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://github.com/Stability-AI/stable-audio-3/archive/$matchSha.zip",
+                "extract_dir": "stable-audio-3-$matchSha/optimized/tflite"
+            }
+        }
+    }
+}
