@@ -18,6 +18,18 @@ scoop install halr9000/sa3_tflite
 |-----|-------------|
 | [`sa3_tflite`](bucket/sa3_tflite.json) | [Stable Audio 3](https://github.com/Stability-AI/stable-audio-3) CPU inference via LiteRT/TFLite — text-to-audio, audio-to-audio, inpainting. No PyTorch at runtime. |
 
+`sa3_tflite` puts upstream's own wrappers on `PATH` as `sa3` and `sa3-gradio`,
+so they work from any directory:
+
+```powershell
+sa3 --prompt "lofi house loop" --dit sm-music --decoder same-s --play
+sa3 --help
+sa3-gradio
+```
+
+Model weights are not bundled; they lazy-download from HuggingFace on first use
+(~2.3 GB small, ~9.5 GB medium) and persist across upgrades.
+
 ## Rebuilding a machine
 
 The bucket covers *which* apps exist; `scoop export` covers *what you had installed*:
@@ -74,11 +86,12 @@ comes back automatically, as long as the bucket is in the export.
    .\bin\test.ps1
    ```
 
-> **The very first CI run on a new bucket fails, and that's expected.** The
-> changed-manifest linter diffs `HEAD^..HEAD`, which doesn't resolve when the
-> repo has only one commit (`fatal: ambiguous argument 'HEAD^..HEAD'`). It
-> passes from the second commit onward. `bin\test.ps1` run locally is
-> unaffected.
+> **The first CI run on a new bucket logs a scary error that you can ignore.**
+> The changed-manifest linter diffs `HEAD^..HEAD`, which doesn't resolve when
+> the repo has only one commit, so discovery reports
+> `fatal: ambiguous argument 'HEAD^..HEAD'`. The job still passes — `test.ps1`
+> exits on Pester's failed-test count, and a discovery error doesn't add to it.
+> It stops appearing from the second commit onward.
 
 ### Notes from building `sa3_tflite`
 
