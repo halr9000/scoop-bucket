@@ -74,6 +74,12 @@ comes back automatically, as long as the bucket is in the export.
    .\bin\test.ps1
    ```
 
+> **The very first CI run on a new bucket fails, and that's expected.** The
+> changed-manifest linter diffs `HEAD^..HEAD`, which doesn't resolve when the
+> repo has only one commit (`fatal: ambiguous argument 'HEAD^..HEAD'`). It
+> passes from the second commit onward. `bin\test.ps1` run locally is
+> unaffected.
+
 ### Notes from building `sa3_tflite`
 
 Worth knowing if you package something similar:
