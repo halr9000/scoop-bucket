@@ -16,6 +16,7 @@ scoop install halr9000/sa3_tflite
 
 | App | Description |
 |-----|-------------|
+| [`neo`](bucket/neo.json) | A distraction-free word processor for authors. |
 | [`sa3_tflite`](bucket/sa3_tflite.json) | [Stable Audio 3](https://github.com/Stability-AI/stable-audio-3) CPU inference via LiteRT/TFLite — text-to-audio, audio-to-audio, inpainting. No PyTorch at runtime. |
 
 `sa3_tflite` puts upstream's own wrappers on `PATH` as `sa3` and `sa3-gradio`,
