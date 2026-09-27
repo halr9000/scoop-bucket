@@ -1,10 +1,10 @@
 {
-    "version": "0.8.2",
+    "version": "0.8.3",
     "description": "A distraction-free word processor for authors",
     "homepage": "https://github.com/hughhowey/neo",
     "license": "MIT",
-    "url": "https://github.com/hughhowey/neo/releases/download/v0.8.2/NEO.0.8.2.exe",
-    "hash": "a52489f72b64877e2aee607af78553d21caf5a5c2cbee7ae55bebba9e9764150",
+    "url": "https://github.com/hughhowey/neo/releases/download/v0.8.3/NEO.0.8.3.exe",
+    "hash": "ebbbee3bc2076c0ab78620ae558f1858bca497d09f1f1e706b0b6d64ae058636",
     "pre_install": "Rename-Item -LiteralPath (Join-Path $dir $fname) -NewName NEO.exe",
     "bin": "NEO.exe",
     "shortcuts": [
