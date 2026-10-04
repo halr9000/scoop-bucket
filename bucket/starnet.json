@@ -1,0 +1,43 @@
+{
+  "version": "0.13.0",
+  "description": "A living pixel-art space station where real AI agents do real work.",
+  "homepage": "https://github.com/androoAGI/starnet",
+  "license": "MIT",
+  "architecture": {
+    "64bit": {
+      "url": "https://github.com/androoAGI/starnet-releases/releases/download/v0.13.0/StarNet_0.13.0_x64-setup.exe#/starnet-setup.exe",
+      "hash": "b35a3f78d4207ba40e913a2547d3bad515dc5face81d105912f05e279bc82b3d"
+    }
+  },
+  "installer": {
+    "script": [
+      "# Remove stale StarNet registration so the NSIS upgrade hook does not redirect installation to an older Scoop directory.",
+      "Remove-Item 'HKCU:\\Software\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\StarNet' -Recurse -Force -ErrorAction SilentlyContinue",
+      "Remove-Item 'HKLM:\\Software\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\StarNet' -Recurse -Force -ErrorAction SilentlyContinue",
+      "Start-Process \"$dir\\starnet-setup.exe\" -ArgumentList '/S', \"/D=$dir\" -Wait"
+    ]
+  },
+  "uninstaller": {
+    "script": [
+      "if (Test-Path \"$dir\\uninstall.exe\") {",
+      "    Start-Process \"$dir\\uninstall.exe\" -ArgumentList '/S' -Wait",
+      "}"
+    ]
+  },
+  "shortcuts": [
+    [
+      "skynet-desktop.exe",
+      "StarNet"
+    ]
+  ],
+  "checkver": {
+    "github": "https://github.com/androoAGI/starnet-releases"
+  },
+  "autoupdate": {
+    "architecture": {
+      "64bit": {
+        "url": "https://github.com/androoAGI/starnet-releases/releases/download/v$version/StarNet_$version_x64-setup.exe#/starnet-setup.exe"
+      }
+    }
+  }
+}
