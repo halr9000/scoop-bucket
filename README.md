@@ -27,6 +27,12 @@ shortcuts, and expose their app and `-cli` commands on PATH. Their per-user
 settings remain outside Scoop's version directories. Launch **PdfCraft** or
 **CADCraft** from the Start Menu, or use this checkout's Codex launch Actions.
 
+PdfCraft automatically registers `.pdf` support for the Windows user running
+Scoop and removes its registration on uninstall. To make it the default PDF
+reader, choose **PdfCraft (Scoop)** under **Settings > Apps > Default apps**.
+Windows requires that one-time selection; installation preserves your existing
+default reader.
+
 `sa3_tflite` puts upstream's own wrappers on `PATH` as `sa3` and `sa3-gradio`,
 so they work from any directory:
 
