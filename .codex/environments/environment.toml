@@ -11,6 +11,24 @@ command = "powershell.exe -NoProfile -Command \"Start-Process (Join-Path (scoop 
 platform = "win32"
 
 [[actions]]
+name = "Launch VectorCraft"
+icon = "play"
+command = "powershell.exe -NoProfile -Command \"Start-Process (Join-Path (scoop prefix vectorcraft) 'vectorcraft.exe')\""
+platform = "win32"
+
+[[actions]]
+name = "Launch EffectCraft"
+icon = "play"
+command = "powershell.exe -NoProfile -Command \"Start-Process (Join-Path (scoop prefix effectcraft) 'effectcraft.exe')\""
+platform = "win32"
+
+[[actions]]
+name = "Launch SoundCraft"
+icon = "play"
+command = "powershell.exe -NoProfile -Command \"Start-Process (Join-Path (scoop prefix soundcraft) 'soundcraft.exe')\""
+platform = "win32"
+
+[[actions]]
 name = "Launch CADCraft"
 icon = "play"
 command = "powershell.exe -NoProfile -Command \"Start-Process (Join-Path (scoop prefix cadcraft) 'cadcraft.exe')\""
