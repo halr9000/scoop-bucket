@@ -16,8 +16,16 @@ scoop install halr9000/sa3_tflite
 
 | App | Description |
 |-----|-------------|
+| [`cadcraft`](bucket/cadcraft.json) | Native CAD and drafting app, with its command-line tool. |
+| [`pdfcraft`](bucket/pdfcraft.json) | Native PDF workbench, with its command-line tool. |
 | [`neo`](bucket/neo.json) | A distraction-free word processor for authors. |
 | [`sa3_tflite`](bucket/sa3_tflite.json) | [Stable Audio 3](https://github.com/Stability-AI/stable-audio-3) CPU inference via LiteRT/TFLite — text-to-audio, audio-to-audio, inpainting. No PyTorch at runtime. |
+
+Install the Crafting apps with `scoop install halr9000/pdfcraft halr9000/cadcraft`.
+Both use official portable builds for x64, x86, and ARM64, create Start Menu
+shortcuts, and expose their app and `-cli` commands on PATH. Their per-user
+settings remain outside Scoop's version directories. Launch **PdfCraft** or
+**CADCraft** from the Start Menu, or use this checkout's Codex launch Actions.
 
 `sa3_tflite` puts upstream's own wrappers on `PATH` as `sa3` and `sa3-gradio`,
 so they work from any directory:

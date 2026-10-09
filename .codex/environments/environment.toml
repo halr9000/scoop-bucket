@@ -1,0 +1,17 @@
+version = 1
+name = "Scoop bucket"
+
+[setup]
+script = ""
+
+[[actions]]
+name = "Launch PdfCraft"
+icon = "play"
+command = "powershell.exe -NoProfile -Command \"Start-Process (Join-Path (scoop prefix pdfcraft) 'pdfcraft.exe')\""
+platform = "win32"
+
+[[actions]]
+name = "Launch CADCraft"
+icon = "play"
+command = "powershell.exe -NoProfile -Command \"Start-Process (Join-Path (scoop prefix cadcraft) 'cadcraft.exe')\""
+platform = "win32"
