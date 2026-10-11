@@ -1,23 +1,23 @@
 {
-    "version": "0.4.0",
+    "version": "0.5.0",
     "description": "Native audio recording, editing, and mixing application",
     "homepage": "https://github.com/storytold/soundcraft",
     "license": "MIT|Apache-2.0",
     "architecture": {
         "64bit": {
-            "hash": "7d53e7f20c345eadef2a6277c314dac8f9b6a22e223916d1cb5f380e6bda82b2",
-            "url": "https://github.com/storytold/soundcraft/releases/download/v0.4.0/soundcraft-0.4.0-windows-x64-portable.zip",
-            "extract_dir": "soundcraft-0.4.0-windows-x64-portable"
+            "hash": "36fc94327e2351ffd674b95919bff06dfa3c448d02b5b93ee818d3c6ebe2d2ab",
+            "url": "https://github.com/storytold/soundcraft/releases/download/v0.5.0/soundcraft-0.5.0-windows-x64-portable.zip",
+            "extract_dir": "soundcraft-0.5.0-windows-x64-portable"
         },
         "32bit": {
-            "hash": "264e7b6ea4f44c774f5d06ce84a9b7280acb7c92785b280de3acf71b18721832",
-            "url": "https://github.com/storytold/soundcraft/releases/download/v0.4.0/soundcraft-0.4.0-windows-x86-portable.zip",
-            "extract_dir": "soundcraft-0.4.0-windows-x86-portable"
+            "hash": "e326927291f4e560ff4dc0c576f71cb4a12fd32935a7a2a05195f22f2e047a8f",
+            "url": "https://github.com/storytold/soundcraft/releases/download/v0.5.0/soundcraft-0.5.0-windows-x86-portable.zip",
+            "extract_dir": "soundcraft-0.5.0-windows-x86-portable"
         },
         "arm64": {
-            "hash": "802452408ed2fc219bab1afb4dc3e0ff2d395687f7ea8b041190b7be050c8a84",
-            "url": "https://github.com/storytold/soundcraft/releases/download/v0.4.0/soundcraft-0.4.0-windows-arm64-portable.zip",
-            "extract_dir": "soundcraft-0.4.0-windows-arm64-portable"
+            "hash": "69dd2b0bdbaa47e6df43ed9cedf29782543fa5fd52ca86d17779b0a6032d9315",
+            "url": "https://github.com/storytold/soundcraft/releases/download/v0.5.0/soundcraft-0.5.0-windows-arm64-portable.zip",
+            "extract_dir": "soundcraft-0.5.0-windows-arm64-portable"
         }
     },
     "bin": [
