@@ -1,12 +1,12 @@
 {
-    "version": "0.13.2",
+    "version": "0.13.3",
     "description": "A living pixel-art space station where real AI agents do real work.",
     "homepage": "https://github.com/androoAGI/starnet",
     "license": "MIT",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/androoAGI/starnet-releases/releases/download/v0.13.2/StarNet_0.13.2_x64-setup.exe#/starnet-setup.exe",
-            "hash": "f8ce564ffe5d420efd1d8efb35c796d73bfd4baae00444c61a82bbc268371cdd"
+            "url": "https://github.com/androoAGI/starnet-releases/releases/download/v0.13.3/StarNet_0.13.3_x64-setup.exe#/starnet-setup.exe",
+            "hash": "a2d477952ded550e0255c514be957e86d12ec0122287c604b8c1ab672185c990"
         }
     },
     "installer": {
