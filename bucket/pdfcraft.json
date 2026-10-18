@@ -31,6 +31,7 @@
         ]
     ],
     "post_install": [
+        "Remove-Item (Join-Path $dir 'portable.txt'), (Join-Path $dir 'PdfCraft.portable') -Force -ErrorAction SilentlyContinue",
         "$exe = Join-Path $dir 'pdfcraft.exe'",
         "$currentExe = Join-Path (Split-Path $dir -Parent) 'current\\pdfcraft.exe'",
         "if (Test-Path $currentExe) { $exe = $currentExe }",
