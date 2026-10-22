@@ -1,23 +1,23 @@
 {
-    "version": "0.14.0",
+    "version": "0.15.0",
     "description": "Native motion graphics and visual effects application",
     "homepage": "https://github.com/storytold/effectcraft",
     "license": "MIT|Apache-2.0",
     "architecture": {
         "64bit": {
-            "hash": "63e96a7f53b743d8c3590ce9f5785b18035fd592bb076ade44cd0881ac20ab0e",
-            "url": "https://github.com/storytold/effectcraft/releases/download/v0.14.0/effectcraft-0.14.0-windows-x64-portable.zip",
-            "extract_dir": "effectcraft-0.14.0-windows-x64-portable"
+            "hash": "1d0c45aad6c5153aea5c1d336cf238138379acc0db90e39e3bfd895cd4ba3669",
+            "url": "https://github.com/storytold/effectcraft/releases/download/v0.15.0/effectcraft-0.15.0-windows-x64-portable.zip",
+            "extract_dir": "effectcraft-0.15.0-windows-x64-portable"
         },
         "32bit": {
-            "hash": "297f403b1c381195a40aa647ee1bd52703d6bbac8ca90e2435d78484374fcb9a",
-            "url": "https://github.com/storytold/effectcraft/releases/download/v0.14.0/effectcraft-0.14.0-windows-x86-portable.zip",
-            "extract_dir": "effectcraft-0.14.0-windows-x86-portable"
+            "hash": "ae1c3f3f686e4e23b4b7609803e2b50a5c5dc8ba1fd6530b09f107eb57283492",
+            "url": "https://github.com/storytold/effectcraft/releases/download/v0.15.0/effectcraft-0.15.0-windows-x86-portable.zip",
+            "extract_dir": "effectcraft-0.15.0-windows-x86-portable"
         },
         "arm64": {
-            "hash": "b45978c0aff0a0eb70ed589b0db56a6f4f84769411c59b2b1918b76d58cf4fb8",
-            "url": "https://github.com/storytold/effectcraft/releases/download/v0.14.0/effectcraft-0.14.0-windows-arm64-portable.zip",
-            "extract_dir": "effectcraft-0.14.0-windows-arm64-portable"
+            "hash": "7aa18262ea9fc4f70fd2ba29b5648e8a17fe7c78f8ab47c6f7799528b7615139",
+            "url": "https://github.com/storytold/effectcraft/releases/download/v0.15.0/effectcraft-0.15.0-windows-arm64-portable.zip",
+            "extract_dir": "effectcraft-0.15.0-windows-arm64-portable"
         }
     },
     "bin": [
