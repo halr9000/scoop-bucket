@@ -1,5 +1,5 @@
 {
-    "version": "2026.10.29.1556-7f85c0f",
+    "version": "2026.10.30.0027-f4b33b2",
     "description": "Stable Audio 3 on CPU via LiteRT/TFLite - text-to-audio, audio-to-audio, and inpainting with no PyTorch at runtime",
     "homepage": "https://github.com/Stability-AI/stable-audio-3/tree/main/optimized/tflite",
     "license": {
@@ -30,9 +30,9 @@
     ],
     "architecture": {
         "64bit": {
-            "url": "https://github.com/Stability-AI/stable-audio-3/archive/7f85c0f693ba2ccea22825b06d1ea83abefe4406.zip",
-            "hash": "18f91c640c819b7fc378a1e0317616bf47ff5149e998fa1693534dfdf7ef11f1",
-            "extract_dir": "stable-audio-3-7f85c0f693ba2ccea22825b06d1ea83abefe4406/optimized/tflite"
+            "url": "https://github.com/Stability-AI/stable-audio-3/archive/f4b33b257c4873a72cc090a1c6308889b45d7d71.zip",
+            "hash": "79cf12e987fd944217211cc54980dfb02e8fb4409382921118a22d4602a0ea40",
+            "extract_dir": "stable-audio-3-f4b33b257c4873a72cc090a1c6308889b45d7d71/optimized/tflite"
         }
     },
     "depends": "main/uv",
